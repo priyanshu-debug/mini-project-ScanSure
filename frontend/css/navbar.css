@@ -6,6 +6,9 @@
 body{
     height:100vh;
     background-color: rgba(185, 207, 203, 0.66);
+    /* display: inline;
+    align-items: center;
+    justify-content: center; */
 }
 .main-navbar{
     border:transparent;
@@ -53,8 +56,33 @@ body{
     color:rgba(72, 39, 162, 0.796);
 }
 #icon1 i{
-    padding-right: 4px;
+    padding: 4px;
 }
 .icon i {
     padding-right:5px;
+}
+
+
+
+/* scientific safety panel */
+#scientific-safety-panel{
+    border:2px solid rgba(0, 0, 255, 0.344);
+    border-radius: 30px;
+    height:max-content;
+    width:max-content;
+    padding:10px;
+    font-size: small;
+    color:orange;
+    font-size: 600;
+    
+}
+#scientific-safety-panel i{
+    color:blue;
+}
+.safety-container{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width:100%;
+    padding-top: 3.5%;
 }
