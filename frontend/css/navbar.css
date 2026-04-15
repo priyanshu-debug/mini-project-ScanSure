@@ -44,6 +44,9 @@ body{
     /* border:2px solid yellow; */
     padding-top: 15px;
 }
+.icon a{
+    text-decoration: none;
+}
 #icon1{
     background-color: antiquewhite;
     border-radius: 25px;
@@ -54,6 +57,7 @@ body{
     padding-left: 0px;
     font-weight: 500;
     color:rgba(72, 39, 162, 0.796);
+
 }
 #icon1 i{
     padding: 4px;
