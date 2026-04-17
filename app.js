@@ -31,6 +31,9 @@ app.get('/insights',(req,res)=>{
     res.render('insights');
 })
 
+app.get('/alternatives',(req,res)=>{
+    res.render('alternatives');
+})
 
 
 
