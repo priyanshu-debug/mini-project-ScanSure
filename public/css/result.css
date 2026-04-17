@@ -5,8 +5,47 @@
     color: rgb(114, 121, 127);
     margin-left:10px;
     margin-top: 10px;
+    font-family: 'Merriweather','sekuya';
+    font-weight: 800;
     
 }
 body{
     background-color: #f5f7fb;
+    font-family: 'Merriweather';
+}
+#analysis-id{
+    margin-left: 40px;
+    color: rgb(114, 121, 127);;
+}
+#toxic{
+    font-size: 60px;
+    font-weight: bolder;
+    margin-left: 30px;
+    display: inline-block;
+}
+#treport{
+    color: rgb(144, 229, 59);
+}
+#download{
+    position: relative;
+    left: 250px;
+    font-size: 40px;
+}
+#share{
+    position: relative;
+    left: 255px;
+    font-size: 40px;
+}
+#analyze_np{
+    position: absolute;
+    left: 970px;
+    font-size: 20px;
+    border-style: none;
+    background: none;
+    background-color:rgb(63, 178, 81);
+    padding:15px;
+    border-radius: 20px;
+    color: #f5f7fb;
+    font-weight: 700;
+    top:270px;
 }
