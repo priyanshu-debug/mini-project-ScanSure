@@ -49,3 +49,38 @@ body{
     font-weight: 700;
     top:270px;
 }
+.report_status{
+    height: 500px;
+    width: 1200px;
+    background-color: beige;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-top: 30px;
+}
+#score{
+    position: relative;
+    height: 500px;
+    width: 400px;
+    background-color: rgb(185, 185, 222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#round_score{
+    height: 250px;
+    width: 250px;
+    background-color: aqua;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#score_content{
+    background-color: aliceblue;
+}
+#synthesis{
+    position: relative;
+    left: 600px;
+}
