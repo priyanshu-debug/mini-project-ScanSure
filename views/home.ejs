@@ -1,12 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScanSure</title>
+
+    <link rel="stylesheet" href="/css/home.css" />
+    <!-- <link rel="stylesheet" href="../css/navbar.css" /> -->
+    <!-- <link rel="stylesheet" href="../html/home.html"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <%- include("partials/navbar") %>
-    <div>Hello This is our home page</div>
+
+  <div class="page-bg"></div>
+
+  <main class="main-wrapper">
+    <!-- Section 2 -->
+    <section class="section center-hero-section">
+      <div class="container center-hero">
+        <div class="badge">SCIENTIFIC SAFETY UPDATE 2024</div>
+
+        <h2>
+          Molecular <br>
+          Intelligence for <br>
+          <span>Better Living.</span>
+        </h2>
+
+        <p>
+          The world's first AI-driven toxicology scanner. Analyze thousands of
+          ingredients instantly with peer-reviewed scientific data.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section scan-section" id="methodology">
+      <div class="container">
+        <div class="scan-box">
+          <div class="scan-title-row">
+            <div class="mini-icon">✦</div>
+            <h3>Paste Formula or Ingredients</h3>
+          </div>
+
+          <div class="watermark">📄</div>
+
+          <textarea id="ingredientsInput" placeholder="e.g. AQUA, SODIUM LAURETH SULFATE, PARABENS..."></textarea>
+
+          <div class="scan-actions">
+            <button class="btn outline-btn" id="loadSampleBtn">Load Scientific Sample</button>
+            <button class="btn solid-btn" id="runAnalysisBtn">Run AI Analysis</button>
+          </div>
+        </div>
+
+        <div class="pill-row">
+          <span>AI SYNTHESIS</span>
+          <span>TOXIN CHECK</span>
+          <span>LONG-TERM IMPACT</span>
+        </div>
+
+        <div class="result-box" id="resultBox">
+          <h4>Analysis Result</h4>
+          <p id="resultText">Your analysis result will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Section 1 -->
+    <section class="section top-space">
+      <div class="container hero-one">
+        <div class="hero-one-left">
+          <h1>The Standard of <br>Ingredients Analysis.</h1>
+          <p>
+            Our multi-layered approach combines local safety databases
+            with real-time neural processing.
+          </p>
+        </div>
+
+        <div class="hero-one-right">
+          <a href="#methodology" class="method-btn">
+            <span>View Methodology</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="section cards-section">
+      <div class="container cards-grid">
+        <div class="info-card">
+          <div class="icon-box soft-green">
+            🛡
+          </div>
+          <h3>Scientific Data</h3>
+          <p>
+            Checking against global health and safety
+            databases to ensure total product
+            transparency.
+          </p>
+          <a href="#">Learn More <span>→</span></a>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-box soft-teal">
+            ⚡
+          </div>
+          <h3>Rapid Execution</h3>
+          <p>
+            Instant processing of hundreds of complex
+            chemical names within seconds.
+          </p>
+          <a href="#">Learn More <span>→</span></a>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-box soft-blue">
+            ✦
+          </div>
+          <h3>AI Synthesis</h3>
+          <p>
+            Deep learning neural networks trained on
+            toxicology papers to catch harmful
+            effects.
+          </p>
+          <a href="#">Learn More <span>→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const loadSampleBtn = document.getElementById("loadSampleBtn");
+const runAnalysisBtn = document.getElementById("runAnalysisBtn");
+const ingredientsInput = document.getElementById("ingredientsInput");
+const resultBox = document.getElementById("resultBox");
+const resultText = document.getElementById("resultText");
+
+loadSampleBtn.addEventListener("click", () => {
+  ingredientsInput.value =
+    "AQUA, GLYCERIN, NIACINAMIDE, SODIUM LAURETH SULFATE, FRAGRANCE, PHENOXYETHANOL, PARABENS, CITRIC ACID";
+});
+
+runAnalysisBtn.addEventListener("click", () => {
+  const value = ingredientsInput.value.trim().toLowerCase();
+
+  if (!value) {
+    resultBox.classList.add("show");
+    resultText.textContent =
+      "Please enter ingredients first or click on Load Scientific Sample.";
+    return;
+  }
+
+  let resultMessage =
+    "AI scan complete. This formula contains common cosmetic ingredients and appears generally usable, but some compounds may require closer review depending on concentration and skin sensitivity.";
+
+  if (value.includes("paraben")) {
+    resultMessage += " Parabens detected: review preservative safety for long-term use.";
+  }
+
+  if (value.includes("fragrance")) {
+    resultMessage += " Fragrance detected: may cause irritation for sensitive users.";
+  }
+
+  if (value.includes("sulfate")) {
+    resultMessage += " Sulfate detected: may be drying for some skin types.";
+  }
+
+  resultBox.classList.add("show");
+  resultText.textContent = resultMessage;
+});
+  </script>
 </body>
 </html>
