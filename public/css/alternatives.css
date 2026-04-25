@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: radial-gradient(circle, #ffffff 40%, #eef2f7 100%);
+  background: radial-gradient(circle, #ffffff 40%, #eef2f7 100%);
   position: relative;
   overflow: hidden;
 }
@@ -44,6 +44,8 @@ body {
 
 
 .care-section {
+  max-width: 1000px;   
+  margin: 0 auto;
   padding: 60px 80px;
 }
 
@@ -51,13 +53,13 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 35px; /* little more spacing */
 }
 
 .icon-box {
-  width: 50px;
-  height: 50px;
-  background: #22c55e;
+  width: 70px;
+  height: 70px;
+  background: #21ab71;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -68,28 +70,43 @@ body {
 
 .care-header h2 {
   margin: 0;
-  font-size: 26px;
+  font-size: 35px;
+  font-weight: 900;
   color: #0f172a;
 }
 
 .care-header p {
-  margin: 0;
-  font-size: 12px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin: 5px 0 0; /* spacing below heading */
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #64748b;
   letter-spacing: 1px;
 }
 
+/* ✅ CARD IMPROVED */
 .care-card {
   background: #ffffff;
   border-radius: 18px;
-  padding: 20px 25px;
-  margin-bottom: 20px;
-  border: 1.5px solid #22c55e;
+  padding: 28px 28px;           /* increased height */
+  margin: 22px auto;            
+  border: 1.5px solid #e1ecec;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   cursor: pointer;
+
+  width: 100%;               
+  max-width: 1000px;
+
+  transition: all 0.3s ease;  /* smooth animation */
 }
 
+/* 🔥 HOVER EFFECT */
+.care-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  border-color: #cbdad1;
+}
+
+/* SUMMARY */
 summary {
   list-style: none;
 }
@@ -98,13 +115,14 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/* HEADER */
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
+/* TAGS */
 .tags {
   display: flex;
   gap: 10px;
@@ -113,95 +131,164 @@ summary::-webkit-details-marker {
 .risk {
   background: #fee2e2;
   color: #dc2626;
-  padding: 5px 10px;
+  padding: 6px 12px; /* slightly bigger */
   border-radius: 999px;
   font-size: 12px;
 }
 
 .desc {
-  font-size: 13px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;             /* increased */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #64748b;
+  line-height: 1.6;            /* ✅ better spacing */
 }
 
-
+/* SWAP */
 .swap {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 5px;
+  margin-top: 8px;             /* more spacing */
 }
 
 .safe {
   background: #dcfce7;
   color: #16a34a;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
 }
 
 .swap h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4; /* spacing */
 }
 
-
+/* ARROW */
 .arrow {
   background: #e2e8f0;
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
+/* arrow hover */
+.care-card:hover .arrow {
+  background: #d1fae5;
+}
 
+/* rotate */
 details[open] .arrow {
   transform: rotate(180deg);
 }
 
-
+/* BODY */
 .card-body {
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
+/* TEXT */
 .title {
   font-size: 12px;
   color: #64748b;
   letter-spacing: 1px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .content {
   font-size: 15px;
   color: #334155;
-  margin: 10px 0;
+  margin: 12px 0;
+  line-height: 1.7; /* ✅ spacing between sentences */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
+/* EXTRA */
 .extra {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 .prep {
   background: #f1f5f9;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border-radius: 999px;
   font-size: 12px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .price {
   background: #dcfce7;
   color: #16a34a;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border-radius: 999px;
   font-size: 12px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* CTA SECTION */
+.cta-section {
+  padding: 60px 100px;
+}
+
+/* CONTAINER */
+.cta-container {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border-radius: 40px;
+  padding: 50px 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* TEXT */
+.cta-text h2 {
+  font-size: 48px;
+  margin: 0;
+  color: #172443;
+  font-weight: 700;
+}
+
+.cta-text span {
+  color: #84cc16; /* green */
+  font-weight: 800;
+}
+
+.cta-text p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #8c97ae;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.cta-btn {
+  background: #18854c;
+  color: white;
+  border: none;
+  padding: 16px 28px;
+  font-size: 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(22,163,74,0.4);
+}
+
+/* 🔥 HOVER */
+.cta-btn:hover {
+  transform: translateY(-3px);
+  background: #22c55e;
+  box-shadow: 0 15px 35px rgba(34,197,94,0.6);
 }
