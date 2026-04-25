@@ -35,6 +35,10 @@ app.get('/alternatives',(req,res)=>{
     res.render('alternatives');
 })
 
+app.get('/howItWorks',(req,res)=>{
+    res.render('howItWorks');
+})
+
 app.post('/analyze',(req,res)=>{
     const data = {
     score:"0",
