@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 app.set('view engine','ejs');
-
+app.use(express.urlencoded({ extended: true }));
 // app.get('/',(req,res)=>{
 //     res.render('index');
 // })
@@ -35,6 +35,18 @@ app.get('/alternatives',(req,res)=>{
     res.render('alternatives');
 })
 
+app.post('/analyze',(req,res)=>{
+    const data = {
+    score:"0",
+    risk:"low",
+    confidence:"0",
+    description:""
+}
+    const chemical = req.body.chemical;
+    console.log(chemical);
+    console.log(req.body);
+    res.render('result',data);
+})
 
 
 app.listen(3001,()=>{

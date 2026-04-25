@@ -47,13 +47,15 @@
           </div>
 
           <div class="watermark">📄</div>
+          <form action="/analyze" method="POST">
 
-          <textarea id="ingredientsInput" placeholder="e.g. AQUA, SODIUM LAURETH SULFATE, PARABENS..."></textarea>
+          <textarea id="ingredientsInput" name="chemical" placeholder="e.g. AQUA, SODIUM LAURETH SULFATE, PARABENS..." ></textarea>
 
           <div class="scan-actions">
             <button class="btn outline-btn" id="loadSampleBtn">Load Scientific Sample</button>
-            <button class="btn solid-btn" id="runAnalysisBtn">Run AI Analysis</button>
+            <button type = 'submit' class="btn solid-btn" id="runAnalysisBtn">Run AI Analysis</button>
           </div>
+          </form>
         </div>
 
         <div class="pill-row">
