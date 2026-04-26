@@ -56,17 +56,21 @@ app.get('/howItWorks',(req,res)=>{
     res.render('howItWorks');
 })
 
-app.post('/analyze',(req,res)=>{
-    const data = {
-    score:"0",
-    risk:"low",
-    confidence:"0",
-    description:""
-}
-    const chemical = req.body.chemical;
-    console.log(chemical);
-    console.log(req.body);
-    res.render('result',data);
+app.post('/analyze',async (req,res)=>{
+    const chemical = req.body.chemical.toLowerCase().trim();
+    const data = await Chemical.findOne({ chemical:chemical });
+    // console.log(chemical);
+    // console.log(req.body);
+    console.log(data);
+    res.render('result',{
+        score:data.score,
+        risk:data.risk,
+        confidence:data.confidence,
+        description:data.description,
+        chemical:data.chemical
+    });
+    
+  
 })
 
 
