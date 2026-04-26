@@ -2,6 +2,23 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 app.set('view engine','ejs');
+
+const mongoose = require('mongoose');
+mongoose.connect("mongodb://127.0.0.1:27017/scansureDB")
+.then(()=>{console.log("Database connected")}).catch((err)=>{
+    console.log(err);
+})
+
+const chemcialSchema = new mongoose.Schema({
+    chemical:String,
+    risk:String,
+    score:Number,
+    confidence:Number,
+    description:String
+})
+
+const Chemical = mongoose.model("Chemical",chemcialSchema);
+
 app.use(express.urlencoded({ extended: true }));
 // app.get('/',(req,res)=>{
 //     res.render('index');
