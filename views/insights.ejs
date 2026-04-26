@@ -5,89 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight Page</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/insights.css">
     <link rel="stylesheet" href="/css/navbar.css">
-    <!-- Tailwind (optional) -->
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <%- include('partials/navbar') %>
+<%- include('partials/navbar') %>
 
-    <div class="container">
+<div class="container">
 
-        <h1>The Science of <span class="highlight">Transparency</span></h1>
-        <p style="text-align:center; max-width:700px; margin:auto;">
-            Our analytical engine analyzes global chemical safety data to deliver insights.
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-title">
+        <h1>
+            The Science of
+            <span>Transparency</span>
+        </h1>
+    </div>
+    
+        <div class="quick-nav">
+            <a href="#stats">Stats</a>
+            <a href="#regulation">Regulations</a>
+            <a href="#analysis">Analysis</a>
+        </div>
+    
+        <p>
+            Analyzing the biological impact of everyday constituents. 
+            Your awareness is the ultimate label.
         </p>
-
-        <!-- Stats -->
-        <div class="stats">
-            <div class="card">
-                <div class="big">500,000+</div>
-                <div>Chemicals Analyzed</div>
-            </div>
-            <div class="card">
-                <div class="big">1.2M+</div>
-                <div>Safety Reports</div>
-            </div>
-            <div class="card">
-                <div class="big">99.8%</div>
-                <div>Accuracy Rate</div>
-            </div>
-            <div class="card">
-                <div class="big">25+</div>
-                <div>Global Standards</div>
-            </div>
-        </div>
-
-        <!-- Regulations -->
-        <div class="section">
-            <h2>Global Regulatory Variance</h2>
-
-            <div>
-                <p><b>European Union</b> – 1328 banned</p>
-                <div class="bar"><div class="fill" style="width:90%"></div></div>
-            </div>
-
-            <div>
-                <p><b>USA (FDA)</b> – 11 banned</p>
-                <div class="bar"><div class="fill" style="width:10%"></div></div>
-            </div>
-
-            <div>
-                <p><b>India (FSSAI)</b> – 450 banned</p>
-                <div class="bar"><div class="fill" style="width:50%"></div></div>
-            </div>
-        </div>
-
-        <!-- Categories -->
-        <div class="section">
-            <h2>Constituent Analysis</h2>
-
-            <p>Preservatives 85%</p>
-            <div class="bar"><div class="fill" style="width:85%"></div></div>
-
-            <p>Additives 65%</p>
-            <div class="bar"><div class="fill" style="width:65%"></div></div>
-
-            <p>Synthetic Colors 45%</p>
-            <div class="bar"><div class="fill" style="width:45%"></div></div>
-
-            <p>Artificial Flavors 90%</p>
-            <div class="bar"><div class="fill" style="width:90%"></div></div>
-        </div>
-
+    
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <h2>Decisive Action through Data</h2>
-        <p>ScanSure evaluates chemical risks and scientific data to ensure safety.</p>
+    <!-- STATS (2x2) -->
+    <div id="stats" class="stats">
+        <div class="card">
+            <h2>500K+</h2>
+            <p>Chemicals Analyzed</p>
+        </div>
+
+        <div class="card">
+            <h2>1.2M+</h2>
+            <p>Safety Reports</p>
+        </div>
+
+        <div class="card">
+            <h2>99.8%</h2>
+            <p>Accuracy Rate</p>
+        </div>
+
+        <div class="card">
+            <h2>25+</h2>
+            <p>Global Standards</p>
+        </div>
     </div>
+
+    <!-- REGULATORY CARDS -->
+    <div id="regulation" class="section">
+        <h3>Global Regulatory Variance</h3>
+
+        <div class="regulation-cards">
+
+            <div class="reg-card eu">
+                <h4>European Union</h4>
+                <p class="number">1328</p>
+                <span>Banned Substances</span>
+            </div>
+
+            <div class="reg-card usa">
+                <h4>USA (FDA)</h4>
+                <p class="number">11</p>
+                <span>Banned Substances</span>
+            </div>
+
+            <div class="reg-card india">
+                <h4>India (FSSAI)</h4>
+                <p class="number">450</p>
+                <span>Banned Substances</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ANALYSIS CARDS -->
+    <div id="analysis" class="section">
+        <h3> Analysis</h3>
+    
+        <div class="analysis-cards">
+    
+            <div class="analysis-card">
+                <div class="top">
+                    <div class="tag risk">PRESERVATIVES</div>
+                    <div class="value">85%</div>
+                </div>
+                <div class="bar"><div class="fill w-85"></div></div>
+            </div>
+    
+            <div class="analysis-card">
+                <div class="top">
+                    <div class="tag risk">ADDITIVES</div>
+                    <div class="value">65%</div>
+                </div>
+                <div class="bar"><div class="fill w-65"></div></div>
+            </div>
+    
+            <div class="analysis-card">
+                <div class="top">
+                    <div class="tag safe">SYNTHETIC COLORS</div>
+                    <div class="value">45%</div>
+                </div>
+                <div class="bar"><div class="fill w-45"></div></div>
+            </div>
+    
+            <div class="analysis-card">
+                <div class="top">
+                    <div class="tag risk">ARTIFICIAL FLAVORS</div>
+                    <div class="value">90%</div>
+                </div>
+                <div class="bar"><div class="fill w-90"></div></div>
+            </div>
+    
+        </div>
+    </div>
+</div>
 <%- include('partials/footer') %>
+
 </body>
 </html>
