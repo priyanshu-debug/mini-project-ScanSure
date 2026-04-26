@@ -3,8 +3,9 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
+
 require("dotenv").config();
-const axios = require("axios");condit
+const axios = require("axios");
 
 const mongoose = require('mongoose');
 mongoose.connect("mongodb://127.0.0.1:27017/scansureDB")
