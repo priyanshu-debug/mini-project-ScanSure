@@ -16,7 +16,7 @@ body {
   inset: 0;
   z-index: -1;
   background-color: #f9fbfb;
-  background-image: radial-gradient(rgba(184, 198, 210, 0.45) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(99, 172, 137, 0.452) 1px, transparent 2px);
   background-size: 30px 30px;
 }
 
