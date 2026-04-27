@@ -247,6 +247,9 @@ body {
   padding: 0 30px;
   transition: 0.3s;
 }
+.hidden-section {
+  display: none;
+}
 
 .awareness-card.open .card-body {
   max-height: 500px;
