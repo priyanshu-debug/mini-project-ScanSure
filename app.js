@@ -43,7 +43,7 @@ app.post('/analyze', async (req, res) => {
             const prompt = `Give safety analysis for the chemical ${chemical} in JSON with fields:
             score (number 0-100, where 0 = very dangerous, 100 = completely safe), risk (low/medium/high), description (detailed explanation including:- what this chemical is- where it is commonly found- harmful effects on human body- what happens if used frequently- long-term risks- safety precautions),,
             ai_confidence_index (number 0-100).Ensure consistency between score and risk.
-            Return ONLY valid JSON, no extra text, no markdown.`;
+            and ensure that chemical actual mai exist karta ho Return ONLY valid JSON, no extra text, no markdown.` ;
 
             const response = await axios.post(url, {
                 model: "llama-3.3-70b-versatile",
