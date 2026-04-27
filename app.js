@@ -5,7 +5,6 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 const axios = require("axios");
-console.log("API KEY:", process.env.GROQ_API_KEY);
 const mongoose = require('mongoose');
 mongoose.connect("mongodb://127.0.0.1:27017/scansureDB")
     .then(() => { console.log("Database connected") }).catch((err) => {
@@ -42,8 +41,8 @@ app.post('/analyze', async (req, res) => {
         try {
             const url = "https://api.groq.com/openai/v1/chat/completions";
             const prompt = `Give safety analysis for the chemical ${chemical} in JSON with fields:
-            score (number 0-100), risk (low/medium/high), description (short but useful),
-            ai_confidence_index (number 0-100).
+            score (number 0-100, where 0 = very dangerous, 100 = completely safe), risk (low/medium/high), description (detailed explanation including:- what this chemical is- where it is commonly found- harmful effects on human body- what happens if used frequently- long-term risks- safety precautions),,
+            ai_confidence_index (number 0-100).Ensure consistency between score and risk.
             Return ONLY valid JSON, no extra text, no markdown.`;
 
             const response = await axios.post(url, {
